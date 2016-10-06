@@ -71,20 +71,20 @@ the \"Gen RGB\" column in open-color-definitions.el to improve them further."
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#212529" "#042028" "#1c1c1c" "brightblack"   "black")   ;; oc-gray-9
     (base02  "#000000" "#000000" "#000000" "black"         "black")   ;; oc-black
-    (base01  "#37b24d" "#465a61" "#585858" "brightgreen"   "green")   ;; oc-green-7
-    (base00  "#f59f00" "#52676f" "#626262" "brightyellow"  "yellow")  ;; oc-yellow-7
-    (base0   "#1c7cd6" "#708183" "#808080" "brightblue"    "blue")    ;; oc-blue-7
+    (base01  "#69db7c" "#465a61" "#585858" "brightgreen"   "green")   ;; oc-green-4
+    (base00  "#ffd43b" "#52676f" "#626262" "brightyellow"  "yellow")  ;; oc-yellow-4
+    (base0   "#4dadf7" "#708183" "#808080" "brightblue"    "blue")    ;; oc-blue-4
     (base1   "#15aabf" "#81908f" "#8a8a8a" "brightcyan"    "cyan")    ;; oc-cyan-6
     (base2   "#e9ecef" "#e9e2cb" "#e4e4e4" "white"         "white")   ;; oc-gray-2
     (base3   "#ffffff" "#ffffff" "#ffffff" "brightwhite"   "white")   ;; oc-white
-    (yellow  "#e67700" "#a57705" "#af8700" "yellow"        "yellow")  ;; oc-yellow-9
-    (orange  "#fa5252" "#bd3612" "#d75f00" "brightred"     "red")     ;; oc-red-6
-    (red     "#c92a2a" "#c60007" "#d70000" "red"           "red")     ;; oc-red-9
-    (magenta "#a61e4d" "#c61b6e" "#af005f" "magenta"       "magenta") ;; oc-pink-9
-    (violet  "#e64980" "#5859b7" "#5f5faf" "brightmagenta" "magenta") ;; oc-pink-6
-    (blue    "#1862ab" "#2075c7" "#0087ff" "blue"          "blue")    ;; oc-blue-9
-    (cyan    "#0b7285" "#259185" "#00afaf" "cyan"          "cyan")    ;; oc-cyan-9
-    (green   "#2b8a3e" "#728a05" "#5f8700" "green"         "green"))  ;; oc-green-9
+    (yellow  "#fab005" "#a57705" "#af8700" "yellow"        "yellow")  ;; oc-yellow-6
+    (orange  "#ff8787" "#bd3612" "#d75f00" "brightred"     "red")     ;; oc-red-4
+    (red     "#fa5252" "#c60007" "#d70000" "red"           "red")     ;; oc-red-6
+    (magenta "#e64980" "#c61b6e" "#af005f" "magenta"       "magenta") ;; oc-pink-6
+    (violet  "#f783ac" "#5859b7" "#5f5faf" "brightmagenta" "magenta") ;; oc-pink-4
+    (blue    "#228ae6" "#2075c7" "#0087ff" "blue"          "blue")    ;; oc-blue-6
+    (cyan    "#15aabf" "#259185" "#00afaf" "cyan"          "cyan")    ;; oc-cyan-6
+    (green   "#40c057" "#728a05" "#5f8700" "green"         "green"))  ;; oc-green-6
   "This is a table of all the colors used by the Solarized color theme. Each
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
