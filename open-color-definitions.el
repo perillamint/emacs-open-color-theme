@@ -69,22 +69,22 @@ the \"Gen RGB\" column in open-color-definitions.el to improve them further."
 ;;        that Emacs seems to dislike
 (defvar open-color-colors           ; ANSI(Solarized terminal)
   ;; name     sRGB      Gen RGB   256       16              8
-  '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
-    (base02  "#073642" "#0a2832" "#262626" "black"         "black")
-    (base01  "#586e75" "#465a61" "#585858" "brightgreen"   "green")
-    (base00  "#657b83" "#52676f" "#626262" "brightyellow"  "yellow")
-    (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
-    (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
-    (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
-    (base3   "#fdf6e3" "#fcf4dc" "#ffffd7" "brightwhite"   "white")
-    (yellow  "#b58900" "#a57705" "#af8700" "yellow"        "yellow")
-    (orange  "#cb4b16" "#bd3612" "#d75f00" "brightred"     "red")
-    (red     "#dc322f" "#c60007" "#d70000" "red"           "red")
-    (magenta "#d33682" "#c61b6e" "#af005f" "magenta"       "magenta")
-    (violet  "#6c71c4" "#5859b7" "#5f5faf" "brightmagenta" "magenta")
-    (blue    "#268bd2" "#2075c7" "#0087ff" "blue"          "blue")
-    (cyan    "#2aa198" "#259185" "#00afaf" "cyan"          "cyan")
-    (green   "#859900" "#728a05" "#5f8700" "green"         "green"))
+  '((base03  "#212529" "#042028" "#1c1c1c" "brightblack"   "black")   ;; oc-gray-9
+    (base02  "#000000" "#000000" "#000000" "black"         "black")   ;; oc-black
+    (base01  "#37b24d" "#465a61" "#585858" "brightgreen"   "green")   ;; oc-green-7
+    (base00  "#f59f00" "#52676f" "#626262" "brightyellow"  "yellow")  ;; oc-yellow-7
+    (base0   "#1c7cd6" "#708183" "#808080" "brightblue"    "blue")    ;; oc-blue-7
+    (base1   "#15aabf" "#81908f" "#8a8a8a" "brightcyan"    "cyan")    ;; oc-cyan-6
+    (base2   "#e9ecef" "#e9e2cb" "#e4e4e4" "white"         "white")   ;; oc-gray-2
+    (base3   "#ffffff" "#ffffff" "#ffffff" "brightwhite"   "white")   ;; oc-white
+    (yellow  "#e67700" "#a57705" "#af8700" "yellow"        "yellow")  ;; oc-yellow-9
+    (orange  "#fa5252" "#bd3612" "#d75f00" "brightred"     "red")     ;; oc-red-6
+    (red     "#c92a2a" "#c60007" "#d70000" "red"           "red")     ;; oc-red-9
+    (magenta "#a61e4d" "#c61b6e" "#af005f" "magenta"       "magenta") ;; oc-pink-9
+    (violet  "#e64980" "#5859b7" "#5f5faf" "brightmagenta" "magenta") ;; oc-pink-6
+    (blue    "#1862ab" "#2075c7" "#0087ff" "blue"          "blue")    ;; oc-blue-9
+    (cyan    "#0b7285" "#259185" "#00afaf" "cyan"          "cyan")    ;; oc-cyan-9
+    (green   "#2b8a3e" "#728a05" "#5f8700" "green"         "green"))  ;; oc-green-9
   "This is a table of all the colors used by the Solarized color theme. Each
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
