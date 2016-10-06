@@ -4,55 +4,55 @@
     (defalias 'cl-case 'case))
   )
 
-(defconst solarized-description
+(defconst open-color-description
   "Color theme by Ethan Schoonover, created 2011-03-24.
-Ported to Emacs by Greg Pfeil, http://ethanschoonover.com/solarized.")
+Ported to Emacs by Greg Pfeil, http://ethanschoonover.com/open-color.")
 
-(defcustom solarized-termcolors 16
+(defcustom open-color-termcolors 16
   "This is set to 16 by default, meaning that Solarized will attempt to use the
 standard 16 colors of your terminal emulator. You will need to set those colors
 to the correct Solarized values either manually or by importing one of the many
 colorscheme available for popular terminal emulators and Xdefaults."
   :type 'integer
   :options '(16 256)
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-degrade nil
+(defcustom open-color-degrade nil
   "For test purposes only; when in GUI mode, forces Solarized to use the 256
 degraded color mode to test the approximate color values for accuracy."
   :type 'boolean
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-diff-mode 'normal
+(defcustom open-color-diff-mode 'normal
   "Sets the level of highlighting to use in diff-like modes."
   :type 'symbol
   :options '(high normal low)
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-bold t
+(defcustom open-color-bold t
   "Stops Solarized from displaying bold when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-underline t
+(defcustom open-color-underline t
   "Stops Solarized from displaying underlines when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-italic t
+(defcustom open-color-italic t
   "Stops Solarized from displaying italics when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-contrast 'normal
+(defcustom open-color-contrast 'normal
   "Stick with normal! It's been carefully tested. Setting this option to high or
 low does use the same Solarized palette but simply shifts some values up or
 down in order to expand or compress the tonal range displayed."
   :type 'symbol
   :options '(high normal low)
-  :group 'solarized)
+  :group 'open-color)
 
-(defcustom solarized-broken-srgb
+(defcustom open-color-broken-srgb
   (if (and (eq system-type 'darwin) (eq window-system 'ns))
       (not (and (boundp 'ns-use-srgb-colorspace)
                 ns-use-srgb-colorspace))
@@ -60,14 +60,14 @@ down in order to expand or compress the tonal range displayed."
   "Emacs bug #8402 results in incorrect color handling on Macs. If this is t
 \(the default on Macs), Solarized works around it with alternative colors.
 However, these colors are not totally portable, so you may be able to edit
-the \"Gen RGB\" column in solarized-definitions.el to improve them further."
+the \"Gen RGB\" column in open-color-definitions.el to improve them further."
   :type 'boolean
-  :group 'solarized)
+  :group 'open-color)
 
 ;; FIXME: The Generic RGB colors will actually vary from device to device, but
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
-(defvar solarized-colors           ; ANSI(Solarized terminal)
+(defvar open-color-colors           ; ANSI(Solarized terminal)
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
     (base02  "#073642" "#0a2832" "#262626" "black"         "black")
@@ -89,9 +89,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
 
-(defun solarized-face-for-index (facespec index &optional light)
+(defun open-color-face-for-index (facespec index &optional light)
   "Creates a face from facespec where the colors use the names from
-  `solarized-colors`."
+  `open-color-colors`."
   (let ((new-fontspec (copy-sequence facespec)))
     (dolist (property '(:foreground :background :color))
       (let ((color-name (plist-get new-fontspec property)))
@@ -121,53 +121,53 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                     (otherwise color-name))))
           (plist-put new-fontspec
                      property
-                     (nth index (assoc color-name solarized-colors))))))
+                     (nth index (assoc color-name open-color-colors))))))
     (when (plist-get new-fontspec :box)
       (plist-put new-fontspec
                  :box
-                 (solarized-face-for-index (plist-get new-fontspec :box) index
+                 (open-color-face-for-index (plist-get new-fontspec :box) index
                                            light)))
     new-fontspec))
 
 (defun create-face-spec (name facespec)
   `(,name ((((background dark) (type graphic))
-            ,(solarized-face-for-index facespec
-                                       (cond (solarized-degrade     3)
-                                             (solarized-broken-srgb 2)
+            ,(open-color-face-for-index facespec
+                                       (cond (open-color-degrade     3)
+                                             (open-color-broken-srgb 2)
                                              (t                     1))))
            (((background dark) (type tty) (min-colors 256))
-            ,(solarized-face-for-index facespec
-                                       (if (= solarized-termcolors 16) 4 3)))
+            ,(open-color-face-for-index facespec
+                                       (if (= open-color-termcolors 16) 4 3)))
            (((background dark) (type tty) (min-colors  16))
-            ,(solarized-face-for-index facespec 4))
+            ,(open-color-face-for-index facespec 4))
            (((background dark) (type tty) (min-colors   8))
-            ,(solarized-face-for-index facespec 5))
+            ,(open-color-face-for-index facespec 5))
            (((background light) (type graphic))
-            ,(solarized-face-for-index facespec
-                                       (cond (solarized-degrade     3)
-                                             (solarized-broken-srgb 2)
+            ,(open-color-face-for-index facespec
+                                       (cond (open-color-degrade     3)
+                                             (open-color-broken-srgb 2)
                                              (t                     1))
                                        t))
            (((background light) (type tty) (min-colors 256))
-            ,(solarized-face-for-index facespec
-                                       (if (= solarized-termcolors 16) 4 3)
+            ,(open-color-face-for-index facespec
+                                       (if (= open-color-termcolors 16) 4 3)
                                        t))
            (((background light) (type tty) (min-colors  16))
-            ,(solarized-face-for-index facespec 4 t))
+            ,(open-color-face-for-index facespec 4 t))
            (((background light) (type tty) (min-colors   8))
-            ,(solarized-face-for-index facespec 5 t)))))
+            ,(open-color-face-for-index facespec 5 t)))))
 
-(defun solarized-color-definitions ()
-  (let ((bold        (if solarized-bold 'bold        'unspecified))
-        (bright-bold (if solarized-bold 'unspecified 'bold))
-        (underline   (if solarized-underline t 'unspecified))
+(defun open-color-color-definitions ()
+  (let ((bold        (if open-color-bold 'bold        'unspecified))
+        (bright-bold (if open-color-bold 'unspecified 'bold))
+        (underline   (if open-color-underline t 'unspecified))
         (opt-under   'unspecified)
-        (italic      (if solarized-italic 'italic 'unspecified)))
-    (cond ((eq 'high solarized-contrast)
+        (italic      (if open-color-italic 'italic 'unspecified)))
+    (cond ((eq 'high open-color-contrast)
            (let ((orig-base3 base3))
              (rotatef base01 base00 base0 base1 base2 base3)
              (setf base3 orig-base3)))
-          ((eq 'low solarized-contrast)
+          ((eq 'low open-color-contrast)
            (setf back      base02
                  opt-under t)))
     (let ((bg-back   '(:background back))
@@ -282,7 +282,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (custom-state (,@fg-green))
                 (custom-variable-tag (,@fg-base1))
                 ;; diff - DiffAdd, DiffChange, DiffDelete, and DiffText
-                ,@(cl-case solarized-diff-mode
+                ,@(cl-case open-color-diff-mode
                     (high
                      `((diff-added (,@fmt-revr ,@fg-green))
                        (diff-changed (,@fmt-revr ,@fg-yellow))
@@ -784,11 +784,11 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(defmacro create-solarized-theme (name description color-definitions)
+(defmacro create-open-color-theme (name description color-definitions)
   `(progn
      (deftheme ,name ,description)
      (apply 'custom-theme-set-faces
             ',name ,color-definitions)
      (provide-theme ',name)))
 
-(provide 'solarized-definitions)
+(provide 'open-color-definitions)

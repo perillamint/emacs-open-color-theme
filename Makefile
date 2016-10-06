@@ -23,10 +23,10 @@ build :
 	    "(if (< emacs-major-version 24)                 \
 	         (progn                                     \
 	           (add-to-list 'load-path \"./\")          \
-	           (require 'color-theme-solarized)         \
-	           (color-theme-solarized))                 \
+	           (require 'open-color-theme)         \
+	           (open-color-theme))                 \
 	       (add-to-list 'custom-theme-load-path \"./\") \
-	       (load-theme 'solarized t))"
+	       (load-theme 'open-color t))"
 
 test-dep-1 :
 	@cd $(TEST_DIR)                                      && \

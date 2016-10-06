@@ -7,11 +7,11 @@ if [ "$version" = "" ]; then
 fi
 echo "version = $version"
 
-dir="color-theme-solarized-${version}"
+dir="open-color-theme-${version}"
 
 mkdir $dir
 
 cp *.el $dir
-sed -i "s/%%version%%/$version/" "$dir/color-theme-solarized-pkg.el"
+sed -i "s/%%version%%/$version/" "$dir/open-color-theme-pkg.el"
 
-tar cf color-theme-solarized-${version}.tar $dir
+tar cf open-color-theme-${version}.tar $dir

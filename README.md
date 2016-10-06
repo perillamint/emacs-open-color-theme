@@ -1,13 +1,12 @@
-[![Stories in Ready](https://badge.waffle.io/sellout/emacs-color-theme-solarized.png?label=ready&title=Ready)](https://waffle.io/sellout/emacs-color-theme-solarized)
-Solarized Colorscheme for Emacs
+Open Color Colorscheme for Emacs
 ===============================
 
 Stolen from Ethan Schoonover <es@ethanschoonover.com> by Greg Pfeil <greg@technomadic.org>
 
-Visit the [Solarized homepage]
+Visit the [Open Color homepage]
 ------------------------------
 
-See the [Solarized homepage] for screenshots, 
+See the [Open Color homepage] for screenshots, 
 details and colorscheme versions for Vim, Mutt, popular terminal emulators and 
 other applications.
 
@@ -20,13 +19,13 @@ Downloads
 ---------
 
 If you have come across this colorscheme via the [Emacs-only repository] on 
-github, see the link above to the Solarized homepage or visit the main [Solarized repository].
+github, see the link above to the Open Color homepage or visit the main [Open Color repository].
 
-The [Emacs-only repository] is kept in sync with the main [Solarized repository]. Issues, bug reports, changelogs that are not specific to the Emacs implementation should be submitted to the main [Solarized repository].
+The [Emacs-only repository] is kept in sync with the main [Open Color repository]. Issues, bug reports, changelogs that are not specific to the Emacs implementation should be submitted to the main [Open Color repository].
 
-[Solarized homepage]:    http://ethanschoonover.com/solarized
-[Solarized repository]:  https://github.com/altercation/solarized
-[Emacs-only repository]:  https://github.com/sellout/emacs-color-theme-solarized
+[Open Color homepage]:    https://yeun.github.io/open-color/
+[Open Color repository]:  https://github.com/yeun/open-color/
+[Emacs-only repository]:  https://github.com/perillamint/emacs-open-color-theme
 [color-theme]: http://www.nongnu.org/color-theme
 
 Installation & Usage
@@ -47,7 +46,7 @@ Installation & Usage
 
 ### all versions
 
-To switch between the light and dark variations of Solarized, set the frame’s `background-mode`. This can be accomplished globally using `M-x customize-variable frame-background-mode` or on a per-frame basis with `(set-frame-parameter nil 'background-mode 'light)` (or `'dark`).  If you're in a terminal, you must also set the terminal parameter with `(set-terminal-parameter nil 'background-mode 'light)` (or `'dark`). Remember to call `enable-theme` after changing the background mode to update the state of the theme.
+To switch between the light and dark variations of Open Color, set the frame’s `background-mode`. This can be accomplished globally using `M-x customize-variable frame-background-mode` or on a per-frame basis with `(set-frame-parameter nil 'background-mode 'light)` (or `'dark`).  If you're in a terminal, you must also set the terminal parameter with `(set-terminal-parameter nil 'background-mode 'light)` (or `'dark`). Remember to call `enable-theme` after changing the background mode to update the state of the theme.
 
 This allows you to have a mix of light and dark frames. I tend to use light frames in the GUI and dark frames in my terminal, so I use the following code:
 
@@ -62,24 +61,24 @@ This allows you to have a mix of light and dark frames. I tend to use light fram
 
 ### IMPORTANT NOTE FOR TERMINAL USERS:
 
-If you are going to use Solarized in Terminal mode (i.e. not in a GUI version
+If you are going to use Open Color in Terminal mode (i.e. not in a GUI version
 like Cocoa or X11 Emacs), **please please please** consider setting your
-terminal emulator's colorscheme to use the Solarized palette. The [Solarized
+terminal emulator's colorscheme to use the Open Color palette. The [Open Color
 repository] includes palettes for some popular terminal emulator as well as
-Xdefaults; or you can download them from the official [Solarized homepage].
+Xdefaults; or you can download them from the official [Open Color homepage].
 If you use this emacs color theme *without* having changed your emulator's
-palette, you will need to configure Solarized to degrade its colorscheme to
+palette, you will need to configure Open Color to degrade its colorscheme to
 a set compatible with the terminal's default limited 256 color palette
 (whereas by using the terminal's 16 ANSI color values, you would
-see the correct, specific values for the Solarized palette).
+see the correct, specific values for the Open Color palette).
 
-Again, I recommend just changing your terminal colors to Solarized values 
+Again, I recommend just changing your terminal colors to Open Color values 
 either manually or via one of the many terminal schemes available for import.
 
 Advanced Configuration
 ----------------------
 
-Solarized will work out of the box with just the instructions specified above
+Open Color will work out of the box with just the instructions specified above
 but does include several variables that can be customized.
 
     variable name            default   optional
@@ -101,28 +100,28 @@ but does include several variables that can be customized.
     Some 256-color terminals also allow you to set and use the standard 16
     colors in addition to the fixed 256-color palette. This option only
     applies when your terminal is in 256-color mode. If set to 16 (the
-    default) it will try to use the exact Solarized colors (assuming that
-    you've set these colors to the correct Solarized values either manually or
+    default) it will try to use the exact Open Color colors (assuming that
+    you've set these colors to the correct Open Color values either manually or
     by importing one of the many colorscheme available for popular
-    terminal emulators). If it’s set to 256, then Solarized will use a
-    degraded version of the Solarized palette by displaying the closest colors
+    terminal emulators). If it’s set to 256, then Open Color will use a
+    degraded version of the Open Color palette by displaying the closest colors
     in the terminal's default 256 colors as shown in [Xterm's color
     chart](http://en.wikipedia.org/wiki/File:Xterm_color_chart.png).
 
 *   solarized-degrade
 
-    For test purposes only; in GUI mode, this forces Solarized to use the 256
+    For test purposes only; in GUI mode, this forces Open Color to use the 256
     degraded color mode to test the approximate color values for accuracy.
 
 *   solarized-bold | solarized-underline | solarized-italic
 
-    If you wish to stop Solarized from displaying bold, underlined or 
+    If you wish to stop Open Color from displaying bold, underlined or 
     italicized typefaces, simply set the appropriate variable to `nil`.
 
 *   solarized-contrast
 
     Stick with normal! It's been carefully tested. Setting this option to high 
-    or low does use the same Solarized palette but simply shifts some values
+    or low does use the same Open Color palette but simply shifts some values
     up or down in order to expand or compress the tonal range displayed.
 
 *   solarized-visibility
@@ -136,7 +135,7 @@ but does include several variables that can be customized.
     Emacs [bug #8402](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=8402)
     results in incorrect color handling on Macs. If you are using Emacs on a
     Mac, we try to determine this value automatically. If this is `t` (the
-    default on Macs), Solarized works around it with alternative colors.
+    default on Macs), Open Color works around it with alternative colors.
     However, these colors are not totally portable, so you may be able to edit
     the "Gen RGB" column in `solarized-definitions.el` to improve them further.
 
