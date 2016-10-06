@@ -3,6 +3,8 @@ Open Color Colorscheme for Emacs
 
 Stolen from Ethan Schoonover <es@ethanschoonover.com> by Greg Pfeil <greg@technomadic.org>
 
+Almost all codes are forked from Sellout's solarized theme. https://github.com/sellout/emacs-color-theme-solarized
+
 Visit the [Open Color homepage]
 ------------------------------
 
@@ -13,7 +15,7 @@ other applications.
 Screenshots
 -----------
 
-![solarized dark](https://github.com/altercation/solarized/raw/master/img/solarized-vim.png)
+TBD.
 
 Downloads
 ---------
@@ -33,15 +35,15 @@ Installation & Usage
 
 ### Emacs 24
 
-1. Add the `emacs-color-theme-solarized` directory to your Emacs `custom-theme-load-path`.
-2. Add `(load-theme 'solarized t)` to your Emacs init file.
+1. Add the `emacs-open-color-theme` directory to your Emacs `custom-theme-load-path`.
+2. Add `(load-theme 'open-color t)` to your Emacs init file.
 3. Reload the init file, or restart Emacs.
 
 ### [color-theme] \(pre-Emacs 24\)
 
 1. Download and install [color-theme].
-2. Add the `emacs-color-theme-solarized` directory to your Emacs `load-path`.
-3. Add `(require 'color-theme-solarized)` and `(color-theme-solarized)` to your Emacs init file (usually `~/.emacs`).
+2. Add the `emacs-open-color-theme` directory to your Emacs `load-path`.
+3. Add `(require 'open-color-theme)` and `(open-color-theme)` to your Emacs init file (usually `~/.emacs`).
 3. Reload the init file, or restart Emacs.
 
 ### all versions
@@ -56,7 +58,7 @@ This allows you to have a mix of light and dark frames. I tend to use light fram
             (let ((mode (if (display-graphic-p frame) 'light 'dark)))
               (set-frame-parameter frame 'background-mode mode)
               (set-terminal-parameter frame 'background-mode mode))
-            (enable-theme 'solarized)))
+            (enable-theme 'open-color)))
 ```
 
 ### IMPORTANT NOTE FOR TERMINAL USERS:
